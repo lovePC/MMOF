@@ -13,7 +13,7 @@ Mirror* Mirror::createMirror(MIRROR_TYPE type,int row,int rank,float angle)
 {
 	Mirror* mirrorNode=Mirror::create();
 
-	Sprite* mirrorSprite=Sprite::create();
+	Sprite* mirrorSprite=Sprite::create("glass.png");
 
 	mirrorNode->angle=angle;
 	mirrorNode->type=type;
