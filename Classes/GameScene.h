@@ -19,6 +19,9 @@ public:
 	CREATE_FUNC(GameScene);
 	static Scene* createScene();
 
+	GameScene(){};
+	~GameScene(){};
+
 	//´¥Ãþ¼àÌý
 	virtual bool onTouchBegan(Touch *touch, Event *unused_event);
 	virtual void onTouchMoved(Touch *touch, Event *unused_event);

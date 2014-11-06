@@ -14,11 +14,15 @@ bool GameScene::init()
 	{
 		return false;
 	}
+	Size size=Director::getInstance()->getWinSize();
 	//android·µ»Ø¼üµÄ¼àÌý
 	auto bListener=EventListenerKeyboard::create();
 	bListener->onKeyReleased=CC_CALLBACK_2(GameScene::onKeyReleased,this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(bListener,this);
 	//±³¾°
+	auto background=Sprite::create("zoulang.png");
+	background->setPosition(size.width/2,size.height/2);
+	this->addChild(background,0);
 	//±³¾°¶¯»­
 	//³õÊ¼»¯¹Ø¿¨
 	/*
@@ -43,4 +47,19 @@ void GameScene::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 	{
 		//
 	}
+}
+
+bool GameScene::onTouchBegan(Touch *touch, Event *unused_event)
+{
+	return false;
+}
+
+void GameScene::onTouchMoved(Touch *touch, Event *unused_event)
+{
+
+}
+
+void GameScene::onTouchEnded(Touch *touch, Event *unused_event)
+{
+
 }
