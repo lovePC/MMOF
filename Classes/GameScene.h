@@ -6,7 +6,7 @@
 #ifndef _GAME_SCENE_H_
 #define _GAME_SCENE_H_
 #include "cocos2d.h"
-#include "Mirror.h"
+#include "MirrorFactory.h"
 #include "Tool.h"
 #include "Light.h"
 

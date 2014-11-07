@@ -4,12 +4,12 @@
 #include "Tool.h"
 using namespace cocos2d;
 
-class Mirror:public Node
+class Mirror:public Sprite
 {
 public:
-	CREATE_FUNC(Mirror);
 	virtual bool init();
-	static Mirror* createMirror(MIRROR_TYPE type,int row,int rank,float angle);
+	//static Mirror* createMirror(MIRROR_TYPE type,int row,int rank,float angle);
+	static Mirror* createMirror(MIRROR_TYPE type,float angle);
 
 	//右键重构封装字段不好用啊。
 	float getAngle()const{ return angle;};
@@ -20,6 +20,7 @@ public:
 private:
 	float angle;
 	MIRROR_TYPE type;
+	//Point point;
 };
 
 

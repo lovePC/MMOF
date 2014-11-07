@@ -9,16 +9,9 @@ bool Mirror::init()
 	return true;
 }
 
-Mirror* Mirror::createMirror(MIRROR_TYPE type,int row,int rank,float angle)
+Mirror* Mirror::createMirror(MIRROR_TYPE type,float angle)
 {
-	Mirror* mirrorNode=Mirror::create();
-
-	Sprite* mirrorSprite=Sprite::create("glass.png");
-
-	mirrorNode->angle=angle;
-	mirrorNode->type=type;
-
-	mirrorNode->addChild(mirrorSprite);
-	return mirrorNode;
+	Mirror* mirror=NULL;
+	return mirror;
 }
 

@@ -29,7 +29,7 @@ bool GameScene::init()
 	根据用户保存的数据将目前关卡数载入(需要创建时传参？)
 	*/
 	//test
-	auto msp1=Mirror::createMirror(MIRROR_TYPE_PLANE,1,1,0);
+	auto msp1=MirrorFactory::createMirror(MIRROR_TYPE_PLANE,0);
 	msp1->setPosition(size.width/2,size.height/2);
 	this->addChild(msp1,50);
 

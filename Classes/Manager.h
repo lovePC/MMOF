@@ -19,7 +19,7 @@ private:
 	Manager();
 	bool init();
 public:
-	Vector<Line> lineVector;
+	Vector<Line*> lineVector;
 	//Vector<light*> lightVector;
 	//Vector<Mirror*> mirrorVector;
 };
