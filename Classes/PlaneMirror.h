@@ -12,6 +12,7 @@ public:
 	virtual bool init();
 	static PlaneMirror* createMirror(MIRROR_TYPE type,float angle);
 private:
+	void turn(bool isclockwise);
 };
 
 

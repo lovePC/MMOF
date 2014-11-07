@@ -19,6 +19,7 @@ bool GameScene::init()
 	auto bListener=EventListenerKeyboard::create();
 	bListener->onKeyReleased=CC_CALLBACK_2(GameScene::onKeyReleased,this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(bListener,this);
+	
 	//±³¾°
 	auto background=Sprite::create("zoulang.png");
 	background->setPosition(size.width/2,size.height/2);

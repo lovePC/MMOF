@@ -9,6 +9,7 @@
 #include "MirrorFactory.h"
 #include "Tool.h"
 #include "Light.h"
+#include "Manager.h"
 
 USING_NS_CC;
 

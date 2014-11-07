@@ -21,7 +21,7 @@ private:
 public:
 	Vector<Line*> lineVector;
 	//Vector<light*> lightVector;
-	//Vector<Mirror*> mirrorVector;
+	Vector<Mirror*> mirrorVector;
 };
 
 #endif _MANAGER_H_

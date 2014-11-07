@@ -15,3 +15,15 @@ Mirror* Mirror::createMirror(MIRROR_TYPE type,float angle)
 	return mirror;
 }
 
+void Mirror::changeTouchble()
+{
+	if (canTouchAble)
+	{
+		canTouchAble=false;
+	}
+	else
+	{
+		canTouchAble=true;
+	}
+}
+
