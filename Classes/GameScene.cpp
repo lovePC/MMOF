@@ -4,7 +4,7 @@ Scene* GameScene::createScene()
 {
 	auto scene=Scene::create();
 	auto layer=GameScene::create();
-	scene->addChild(scene);
+	scene->addChild(layer);
 	return scene;
 }
 
