@@ -27,3 +27,5 @@ void Mirror::changeTouchble()
 	}
 }
 
+void Mirror::logic(){}
+

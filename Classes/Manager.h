@@ -18,9 +18,13 @@ private:
 	static Manager* m_manager;
 	Manager();
 	bool init();
+
+	Vector<Mirror*>& getMirror(){return mirrorVector;};
+	Vector<Light*>& getLight(){return lightVector;};
+	Vector<Line*>& geLine(){return lineVector;};
 public:
 	Vector<Line*> lineVector;
-	//Vector<light*> lightVector;
+	Vector<Light*> lightVector;
 	Vector<Mirror*> mirrorVector;
 };
 

@@ -68,3 +68,8 @@ void GameScene::onTouchEnded(Touch *touch, Event *unused_event)
 {
 
 }
+
+void GameScene::initLevel()
+{
+
+}

@@ -16,6 +16,7 @@ public:
 	void setAngle(float vel) { angle = vel;};
 	MIRROR_TYPE getType()const{ return type;};
 	void setType(MIRROR_TYPE vel) { type = vel;};
+	void logic();
 	void changeTouchble();
 
 	bool canTouchAble;

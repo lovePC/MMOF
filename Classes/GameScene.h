@@ -30,8 +30,8 @@ public:
 
 	//安卓返回键监听
 	void onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event);
-	//
-
+	//初始化关卡
+	void initLevel();
 	//void checkGameWin();
 	//void checkGameOver();
 
