@@ -41,6 +41,11 @@ enum MIRROR_TYPE
 	MIRROR_TYPE_PLANE,//平面镜
 	MIRROR_TYPE_PLANE_ABSOLUTE//无法改变方向的平面镜
 };
+enum LIGHT_TYPE
+{
+	LIGHT_TYPE_NORMAL,//正常的光线
+	LIGHT_TYPE_THUNDER//雷电
+};
 //设置为单例？
 class Tool
 {

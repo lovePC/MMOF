@@ -1,6 +1,6 @@
-#include "NormalLight.h"
+#include "Thunder.h"
 
-bool NormalLight::init()
+bool Thunder::init()
 {
 	if (!Sprite::init())
 	{
@@ -9,9 +9,11 @@ bool NormalLight::init()
 	return true;
 }
 
-NormalLight* NormalLight::createLight(LIGHT_TYPE type,float sx,float sy,float ex,float ey)
+Thunder* Thunder::createLight(LIGHT_TYPE type,float sx,float sy,float ex,float ey)
 {
-	auto light=new NormalLight();
+	auto light=new Thunder();
+	//雷电需要一个逐帧动画
+	//而且时不时应该只有一发啊_(:з」∠)_
 	light->initWithFile("light.png",Rect(0,0,85,256));
 	light->setType(type);
 	//缩放比例
@@ -36,8 +38,6 @@ NormalLight* NormalLight::createLight(LIGHT_TYPE type,float sx,float sy,float ex
 		//第一象限
 		light->setRotation(std::atan((sx-ex)/(sy-ey)));
 	}
-
-	
 
 	return light;
 }

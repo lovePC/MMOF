@@ -2,7 +2,7 @@
 
 bool Mirror::init()
 {
-	if (!Node::init())
+	if (!Sprite::init())
 	{
 		return false;
 	}
