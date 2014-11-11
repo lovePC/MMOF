@@ -2,6 +2,7 @@
 #define _MANAGER_H_
 #include "cocos2d.h"
 #include "MirrorManager.h"
+#include "Mirror.h"
 #include "Tool.h"
 #include "Line.h"
 #include "Light.h"

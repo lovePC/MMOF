@@ -16,11 +16,11 @@ bool LogoScene::init()
 	}
 	Size size=Director::getInstance()->getWinSize();
 
-	auto backGround=LayerColor::create(Color4B(255,255,255,255),size.width,size.height);
-	backGround->setPosition(size.width/2,size.height/2);
-	this->addChild(backGround,0);
+	//auto backGround=LayerColor::create(Color4B(255,255,255,255),size.width,size.height);
+	//backGround->setPosition(size.width/2,size.height/2);
+	//this->addChild(backGround,0);
 
-	auto Logo=Sprite::create("");
+	auto Logo=Sprite::create("logo.png");
 	Logo->setPosition(size.width/2,size.height/2);
 	Logo->setOpacity(0);
 	Logo->runAction(

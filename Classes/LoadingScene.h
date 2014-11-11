@@ -16,16 +16,14 @@ public:
 	LoadingScene(){};
 	~LoadingScene(){};
 
-	int numberIfLoadedRes;//当前已经加载的数量
+	int numberOfLoadedRes;//当前已经加载的数量
 	int numberCount;//资源的总数
 	void loadResources();
 	void loadingCallBack(Texture2D* texture);
 
-	void magicCircleLogic();
-	//重力
-	const float g;
+	void magicCircleLogic(float dt);
 	//当前速度
-	void float v;
+	float v;
 	void logic(float dt);
 	Sprite* magicCircle;
 

@@ -22,21 +22,52 @@ bool LoadingScene::init()
 
 	magicCircle=Sprite::create("mofazhen.png");
 	magicCircle->setPosition(size.width/2,size.height/2);
+	magicCircle->setScale(0.3f);
+	magicCircle->setRotation(-90.0f);
 	//逐渐加快速度然后再减慢停住到此时正好一周a=2s/t2不对
 	//
-	magicCircle->runAction(RepeatForever::create());
-	this->addChild(magicCircle,1);
-
+	v=1.0f;
 	
+	this->addChild(magicCircle,1);
+	//进度条？我需要吗
+
+	this->numberOfLoadedRes=1;
+	this->numberCount=1;
 
 	loadResources();
+	this->schedule(schedule_selector(LoadingScene::logic));
+	this->schedule(schedule_selector(LoadingScene::magicCircleLogic),0.1f);
 
 	return true;
 }
 
+void LoadingScene::loadResources()
+{
+	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Play.plist");
+	numberOfLoadedRes++;
+
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+//	Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+	//Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+	//Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+	//Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+	//Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+	//Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+	//Director::getInstance()->getTextureCache()->addImageAsync("playbg.png", CC_CALLBACK_1(LoadingScene::loadingCallBack, this));
+
+}
+
 void LoadingScene::loadingCallBack(Texture2D* texture)
 {
-	numberIfLoadedRes++;
+	numberOfLoadedRes++;
 }
 
 void LoadingScene::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
@@ -51,21 +82,23 @@ void LoadingScene::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 	}
 }
 
-void LoadingScene::magicCircleLogic()
+void LoadingScene::magicCircleLogic(float dt)
 {
 	static float t=0.1f;
-	float rotateion=magicCircle->getRotation();
-	float a=std::sin(rotateion)*g;
-	v+=a*t;
+	float rotateion=magicCircle->getRotation()+90.0f;
+	float a=std::sin(CC_DEGREES_TO_RADIANS(rotateion))*g;
+
+	v=v+a*t;
+	magicCircle->runAction(RotateBy::create(0.1f,v));
 }
 
 void LoadingScene::logic(float dt)
 {
-	float percent=(float)numberIfLoadedRes/(float)numberCount;
+	float percent=(float)numberOfLoadedRes/(float)numberCount;
 	//进度条
 	//loading->setPercent(percent);
-	if (numberIfLoadedRes==numberCount)
+	if (numberOfLoadedRes==numberCount)
 	{
-		Director::getInstance()->replaceScene(StartScene::createScene());
+	//	Director::getInstance()->replaceScene(StartScene::createScene());
 	}
 }

@@ -46,6 +46,9 @@ enum LIGHT_TYPE
 	LIGHT_TYPE_NORMAL,//正常的光线
 	LIGHT_TYPE_THUNDER//雷电
 };
+
+//重力
+const float g=9.8f;
 //设置为单例？
 class Tool
 {
